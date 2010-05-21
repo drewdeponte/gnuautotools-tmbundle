@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -w
+require ENV['TM_SUPPORT_PATH'] + '/lib/exit_codes.rb'
+
+correct_scope = "text.changelog markup.list.unnumbered.changelog markup.underline.link.path.changelog"
+actual_scope = ENV['TM_SCOPE']
+
+if actual_scope != correct_scope
+	puts "Error: Incorrect scoping for this command."
+	TextMate::exit_show_tool_tip
+end
+
+proj_dir = ENV['TM_PROJECT_DIRECTORY']
+supp_dir = ENV['TM_SUPPORT_PATH']
+
+file_path = STDIN.read
+file_path = file_path.gsub("source:trunk", proj_dir)
+
+mate_path = supp_dir + "/bin/mate"
+
+cmd_path = mate_path + ' ' + file_path
+Kernel::system(cmd_path)
+</string>
+	<key>fallbackInput</key>
+	<string>scope</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string></string>
+	<key>name</key>
+	<string>GNU ChangeLog - Open Scope / Selection Path</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>text.changelog markup.list.unnumbered.changelog markup.underline.link.path.changelog</string>
+	<key>uuid</key>
+	<string>0B12591F-9FD7-4C10-BC6D-3F77BBB6DF4D</string>
+</dict>
+</plist>

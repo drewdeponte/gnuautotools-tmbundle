@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+html_header "Autotools Help" "Autotools"
+
+Markdown.pl &lt;&lt;'EOF'
+This bundle provides a set of useful commands, additional language support, and some settings for GNU Autotools users.
+
+Several of the commands assume that you have a standard GNU Autotools build environment setup within your project. This includes having a configure.ac file, and a Makefile.am file properly configured and in the projects root folder. For information on the GNU Autotools build environment please refer to the __References__ section.
+
+All the features but one will work out of the box without configuring any of the bundle's settings. Detailed information on the provided commands, language support and settings can be found below.
+
+## Commands
+
+*	__Build__ (&amp;#x2318;B)
+
+	Build the project using the `autoreconf -i`, `./configure`, `make` command sequence. It will also bring up a window displaying the results of the build process in real time so that you may identify warnings or errors and find them within your projects sources. For more detailed information on what this command does please read the appropriate sections on each of the commands in the command sequence.
+
+*	__Build__ (bundle) (&amp;#x2318;B)
+
+	Build the project using the `autoreconf -i`, `./configure`, `make`, `make bundle` command sequence. This will build the project just as the `Build` command does and then build the application bundle by calling the `make bundle` command. It will also bring up a window displaying the results of the build process in real time so that you may identify warnings or errors and fend them within your projects sources. For more detailed information on what this command does please read the appropriate sections on each of the commands in the command sequence.
+
+*	__Build__ (mingw) (&amp;#x2318;B)
+
+	Build the project using the `autoreconf -i`, `./configure (mingw)`, `make` command sequence. This will build the project using the `mingw` cross-compilation suite. It will also bring up a window displaying the results of the build process in real time so that you may identify warnings or errors and find them within your projects sources. For more detailed information on what this command does please read the appropriate sections on each of the commands in the command sequence.
+
+*	__Run__ (bundle)… (&amp;#x2318;R)
+
+    Recursively scan the project for `.app` application bundles and presents a list of the available `.app` application bundles, allowing one to select a bundle to run. If there exists only one `.app` application bundle within the project then it will launch that application bundle without displaying the selection window.
+
+*	__Run__ (terminal)… (&amp;#x2318;R)
+
+	Recursively scan the project for `Makefile.am` files and identify produced binaries by looking at `_PROGRAMS` entries. It then displays a window allowing one to select between the produced applications. It also allows one to specify any command line arguements to pass to the chosen application. Once selected it will launch a terminal and run the selected application in it.
+
+*	__make__ (&amp;#x2318;M)
+
+	Run the `make` command of the GNU Autotools build enviroment to build the binaries of the project without having to re-run the `autoreconf -i` and `./configure` commands. This is generally useful for quick/incremental development. If one makes some modifications to source and have NOT changed the build environment configuration files, one can simply run the `make` command to build the project. Note: The `make` command will detect changes made to source files and objects and will only build the necessary portions of the project.
+
+*	__make__ __&amp;__ __Run__ (bundle)… (&amp;#x21E7;&amp;#x2318;M)
+
+	Run the `make`, `make bundle`, and `Run (bundle)` command sequence. This command is designed to provide a method of building and running bundle applications without having to re-run the `autoreconf -i`, and `./configure` commands. For more detailed information on what this command does please read the appropriate sections on each of the commands in the command sequence.
+
+*	__make__ __&amp;__ __Run__ (terminal)… (&amp;#x21E7;&amp;#x2318;M)
+
+	Run the `make`, `Run (terminal)` command sequence. This command is designed to provide a method of building and running command line applications without having to re-run the `autoreconf -i`, and `./configure` commands. For more detailed information on what this command does please read the appropriate sections on each of the commands in the command sequence.
+
+*  	__Build__ __&amp;__ __Run__ (bundle)… (&amp;#x21E7;&amp;#x2318;B)
+
+	Run the `autoreconf -i`, `./configure`, `make`, `make bundle`, `Run (bundle)` command sequence. This command is designed to perform a full bundle based project build. It should be used as either an initial build for the project, or if the build environments configuration files have been modified. For more detailed information on what this command does please read the appropriate sections on each of the commands in the command sequence.
+
+*  	__Build__ __&amp;__ __Run__ (terminal)… (&amp;#x21E7;&amp;#x2318;B)
+
+	Run the `autoreconf -i`, `./configure`, `make`, `Run (terminal)` command sequence. This command is designed to perform a full command line based project build. It should be used as either an initial build for the project, or if the build environments configuration files have been modified. For more detailed information on what this command does please read the appropriate sections on each of the commands in the command sequence.
+
+*	__Clean__ (&amp;#x21E7;&amp;#x2318;C)
+
+	Run the `make clean`, `make distclean`, `./clean_bootstrap` command sequence. This command is designed to perform a full cleaning of the project after previously having done a full build of the project. It will remove the built binaries and all the extraneous files produced by the build environment during a build. For more detailed information on what this command does please read the appropriate sections on each of the commands in the command sequence.
+
+*	__autoreconf -i__
+
+	This command processes the GNU autoconf `configure.ac` in the root directory of the project and produces a `configure` script. For more detailed information on what the `configure` script does please refer to the section on the `./configure` command.
+
+*	__./configure__
+
+	This command runs the script produced by the `autoreconf -i` command parsing the projects `configure.ac` file. This script runs a number of different tests on the system (based on the configure.ac files contents) to best determine how to build the project. Some tests may include checking for specific libraries, testing individual library functions, verifying existence of command line utilities, identifying host system, etc.
+
+*	__./configure (mingw)__
+
+	This command runs the script produced by the `autoreconf -i` command parsing the projects `configure.ac` file. It does however invoke this script in a special fashion that tells the script the target build system is Windows 32-bit machine and that it should use the i386-mingw32 cross-compilation suite. Beyond that, it does the same thing that the `./configure` command does.
+
+	Note: The i386-mingw32 cross-compilation suite is available via [MacPorts](http://www.macports.org/).
+
+*	__make bundle__
+
+	Run the `make bundle` command of the GNU Autotools build environment to build the bundle of the project. This is generally useful for when a static file that gets copied into the bundle has been modified and you need to rebuild the bundle without performing an actual project build.
+
+	Note: This command assumes that the non-standard make target, `bundle` has been added via the `Makefile.am` file in the projects root directory. Please read the documentation outlined in the __References__ section to learn how to do this.
+
+*	__sudo make install__
+
+	Run the `sudo make install` command of the GNU Autotools build environment to install the project onto ones system. Currently, it handles installations to the default prefix location, `/usr/local/`. There are plans to eventually add support for passing optional commands to the `./configure` script via project settings which would allow for changing the destination prefix.
+
+*	__make clean__
+
+	Run the `make clean` command of the GNU Autotools build environment to remove temporary files built by running the `make` command. This generally includes object files and such.
+
+*	__make distclean__
+
+	Run the `make distclean` command of the GNU Autotools build environment to remove binary files and other files that are produced by the `make` command for distribution.
+
+*	__./clean_bootstrap.sh__
+
+	Run the `./clean_bootstrap.sh` script in the projects root directory. This is a non-standard script that I generally use in all of my projects to remove extraneous files produced by the `autoreconf -i` command. This is called as the last command in any of the command sequences, such as the `Clean` command sequence. Hence, if there is no `clean_bootstrap.sh` script in ones projects root directory. It won't effect things drastically.
+
+## ChangeLog Support
+
+Beyond providing a plethora of useful commands, this bundle also provides support for a language to use with ChangeLog files that is pretty closely related to the official GNU ChangeLog standard. It has a slight few modifications to improve linking between the ChangeLog and the altered files. Instead of requiring you memorize the language and the format for the ChangeLog this bundle has decided to provide editing of the ChangeLog via a few cute additions. Read about them below in their appropriate sections.
+
+*	__Sections__ (sec⇥)
+
+	Sections in ChangeLogs are basically headers that identify a new section of changes. Section headers contain three pieces of information in them, the date of the log, the author of the log, and e-mail address of the author of the log. Given that it would be repetitious to have to enter those three pieces of information every time you create a log section, this bundle provides a short cut for producing them automatically. To produce the section header type the keyword `sec` and then hit the tab key. It will produce a header and create a tab stopped initial log entry for you.
+
+	Note: If you look at the author and e-mail address they contain my name and e-mail address because both the `TM_AUTOTOOLS_NAME` and `TM_AUTOTOOLS_EMAIL` settings are set to my name and e-mail address by default. Please refer to the `Settings` section to learn how to modify these settings.
+
+*	__Entries__ (⌅)
+
+	Entries within a ChangeLog contain three pieces of information about a given modification, the path to the file that was modified, the function/section within that file that was modified, and a natural language description of what was modified and why it was modified. Entries are automatically produced by hitting the `enter/` key while the carrot/key cursor is already on a previous entry lines natural language description.
+
+	Once on a freshly generated entry line, you simply fill in the section that is currently selected and then hit the tab key to move to the next item in the entry, and so on and so forth until you have finished filling out an entry. At which point you can hit the `enter` key again to create another entry or save the file and go work on something else.
+
+	Note: In the file path field there is a portion that is pre-entered which looks like "source:trunk/". This is a tag so that one can copy and paste their ChangeLog entries into their SubVersion commit logs allowing SubVersion browsers like the one integrated into [Trac](http://trac.edgewall.org) to properly interpret the path and create an appropriate link. In this case trunk is the equivalent to the name of the root directory of your project.
+
+*	__Version Markers__ (ver⇥)
+
+	Version markers are another component of ChangeLog files that are use to mark a stopping point in changes for a specific version. For example after making a large number of changes, one might want to version there software as version 0.1.0. Well to signify this in a ChangeLog you create what is know as a Version Marker. To create a version marker you simply type the key word `ver` and then hit the tab key when the carrot/key cursor is in any whitespace.
+
+	After creating the version marker you fill in the entries within it with the proper information, version major number, version minor number, version patch number, and the name that it was tagged as in your version control system.
+
+*	__Open Paths__ (⌅)
+
+	The open paths feature, is just a little quick access feature provided for those that are reviewing changes in the ChangeLog. It allows one to press enter while the carrot/key cursor is on one of the path entries in the ChangeLog and it will open the file that is referenced by that path in a new tab (if it wasn't already open). If the file referenced was already open then it will bring that files tab forward.
+	
+*   __Copy Recent Entries__ (&amp;#x2318;C)
+
+    The copy recent entries feature does exactly what its title says. It loads your ChangeLog file and puts the recent ChangeLog entries into the copy and paste buffer so that you can trivially paste the changes, perhaps in the SubVersion commit log window. Note: This key command will only work while in a ChangeLog file. However, if selected from the `Bundles` menu it will work no matter which file type you are currently working on.
+
+## Settings
+
+To set one of the following settings go to Bundles &amp;#x2192; Show Bundle Editor and select `Preferences` from the drop-down list at the top left of the Bundle Editor. Once in preferences view you will see a list of all the bundles currently displayed in a list below. Expand the bundle called `Autotools` and select the entry called `ChangeLog - Preferences`. In the right side of the Bundle Editor there is a Command(s) entry area where the properly list defining these settings will appear. Simply replace the values of the settings listed below that you would like to change and close the Bundle Editor. The next time you use any feature that uses one of the settings below it will use the new value.
+
+*	`TM_AUTOTOOLS_NAME`
+
+	This setting is used to specify the name of the Developer/Author that is working on the project and is used in the automagic production of the ChangeLog section headers.
+
+*	`TM_AUTOTOOLS_EMAIL`
+
+	This setting is used to specify the e-mail of the Developer/Author that is working on the project and is used in the automagic production of the ChangeLog section headers.
+
+## References
+
+*	Autobook
+
+	The Autobook is a very good book that covers the three components of the GNU Autotools build environment (`autoconf`, `automake`, and `libtool`). It is available in an online format at the following url:
+
+	[`http://sourceware.org/autobook/`](http://sourceware.org/autobook/)
+
+*	Autoconf Manual
+
+	The Autoconf Manual is a very good reference book for `autoconf`. It is available in an online format at the following url:
+
+	[`http://www.gnu.org/software/autoconf/manual/index.html`](http://www.gnu.org/software/autoconf/manual/index.html)
+
+*	Automake Manual
+
+	The Automake Manual is a very good reference book for `automake`. It is available in an online format at the following url:
+
+	[`http://www.gnu.org/software/automake/manual/index.html`](http://www.gnu.org/software/automake/manual/index.html)
+
+*	Libtool Manual
+
+	The Libtool Manual is a very good reference book for `libtool`. It is available in an online format at the following url:
+
+	[`http://www.gnu.org/software/libtool/manual.html`](http://www.gnu.org/software/libtool/manual.html)
+
+## Credits
+
+All of the work was done by Andrew De Ponte with a small amount of consulting from Michael Sheets.
+
+
+EOF
+
+html_footer</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Help</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>uuid</key>
+	<string>9BC9694B-DA2C-4EEC-9F54-7E3B01323477</string>
+</dict>
+</plist>

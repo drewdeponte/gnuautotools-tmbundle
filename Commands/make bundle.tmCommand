@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>autoScrollOutput</key>
+	<true/>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>#!/bin/bash
+
+. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+html_header
+
+"$TM_BUNDLE_SUPPORT/run_make_bundle.sh" 2&gt;&amp;1 | "$TM_BUNDLE_SUPPORT/format_output.rb"
+
+html_footer
+
+rescan_project</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@m</string>
+	<key>name</key>
+	<string>make bundle</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>uuid</key>
+	<string>0695A7D9-8D66-444A-8011-4BC43FE49818</string>
+</dict>
+</plist>

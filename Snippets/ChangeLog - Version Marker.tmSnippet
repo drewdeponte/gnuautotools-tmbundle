@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>-- ${1:major}.${2:minor}.${3:patch} -- tagged as ${4:tag}.</string>
+	<key>name</key>
+	<string>GNU ChangeLog - Version Marker</string>
+	<key>scope</key>
+	<string>text.changelog</string>
+	<key>tabTrigger</key>
+	<string>ver</string>
+	<key>uuid</key>
+	<string>881D3FA6-B667-4BD2-BBC9-E0477C7DD8E5</string>
+</dict>
+</plist>

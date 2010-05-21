@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>CORRECT_SCOPE="text.changelog markup.list.unnumbered.changelog string.unquoted.changelog"
+
+if [ "$TM_SCOPE" != "$CORRECT_SCOPE" ]; then
+	echo "Error: Incorrect scoping for this command."
+	exit_show_tool_tip
+fi
+
+exit_insert_snippet "\$TM_CURRENT_LINE
+
+* source:trunk/\${1:modified_file_name} (\${2:modified_function}): \${0:description}"</string>
+	<key>fallbackInput</key>
+	<string>line</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string></string>
+	<key>name</key>
+	<string>GNU ChangeLog - Created Line / Selection Entry</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>text.changelog markup.list.unnumbered.changelog string.unquoted.changelog</string>
+	<key>uuid</key>
+	<string>9B5798FA-7B66-49AD-A2FA-D0702228A776</string>
+</dict>
+</plist>

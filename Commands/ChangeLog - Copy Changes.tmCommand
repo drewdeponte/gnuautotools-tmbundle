@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>#!/bin/bash
+
+"$TM_BUNDLE_SUPPORT/copy_recent_changes.py"
+retcode=$?
+if [[ $retcode -ne 0 ]]; then
+	exit_show_tool_tip
+fi</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@c</string>
+	<key>name</key>
+	<string>GNU ChangeLog - Copy Recent Entries</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>text.changelog</string>
+	<key>uuid</key>
+	<string>C278B7F7-531E-40F6-86B9-E05179C086AE</string>
+</dict>
+</plist>

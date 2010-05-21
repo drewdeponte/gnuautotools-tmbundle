@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>`date +%Y-%m-%d` $TM_AUTOTOOLS_NAME &lt;$TM_AUTOTOOLS_EMAIL&gt;
+
+* source:trunk/${1:modified_file_name} (${2:modified_function}): ${0:description}
+</string>
+	<key>name</key>
+	<string>GNU ChangeLog - Section</string>
+	<key>scope</key>
+	<string>text.changelog</string>
+	<key>tabTrigger</key>
+	<string>sec</string>
+	<key>uuid</key>
+	<string>AA3E47D4-68D8-4DFC-A4EA-5A74E9EF536D</string>
+</dict>
+</plist>

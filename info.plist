@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>plcunpgbe@tznvy.pbz</string>
+	<key>contactName</key>
+	<string>Andrew De Ponte</string>
+	<key>deleted</key>
+	<array>
+		<string>BBBC7E72-57D3-404E-98FC-492FB305D49F</string>
+	</array>
+	<key>description</key>
+	<string>A bundle that provides support for the GNU Autotools build environment.</string>
+	<key>mainMenu</key>
+	<dict>
+		<key>items</key>
+		<array>
+			<string>CBAC7877-2268-49EC-A63F-B5E68808BDEB</string>
+			<string>422668A5-48DC-4EE5-9646-790F39AF1019</string>
+			<string>D9613CC9-384A-4465-93E6-C27CDB78C0D3</string>
+			<string>------------------------------------</string>
+			<string>DA846651-96D2-43E4-9757-9F4D40856ED0</string>
+			<string>0F9E3CA3-55BA-4557-BF1D-5373381EC7AA</string>
+			<string>15713A86-BF37-43BF-8E2C-361C7EF7A243</string>
+			<string>1C90E358-703F-4BB7-BC74-5C4D77FDD804</string>
+			<string>5970C8E6-17C8-4218-B2C2-51170F81ABA2</string>
+			<string>------------------------------------</string>
+			<string>9BC9694B-DA2C-4EEC-9F54-7E3B01323477</string>
+		</array>
+		<key>submenus</key>
+		<dict>
+			<key>0F9E3CA3-55BA-4557-BF1D-5373381EC7AA</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>6E3A791F-7A98-4E05-8880-338251174A6D</string>
+					<string>B229DEDA-F125-43E5-B4F5-7FA52E3CE23F</string>
+					<string>D88168BD-620F-4BDC-A2C0-9EE77BEE3735</string>
+				</array>
+				<key>name</key>
+				<string>Command Line Interface Support</string>
+			</dict>
+			<key>15713A86-BF37-43BF-8E2C-361C7EF7A243</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>022DD220-139E-4811-8E92-85843489ED9F</string>
+					<string>3B04634F-7344-4D6D-9749-6AE5576F6BE7</string>
+				</array>
+				<key>name</key>
+				<string>MinGW Support</string>
+			</dict>
+			<key>1C90E358-703F-4BB7-BC74-5C4D77FDD804</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>9B5798FA-7B66-49AD-A2FA-D0702228A776</string>
+					<string>AA3E47D4-68D8-4DFC-A4EA-5A74E9EF536D</string>
+					<string>881D3FA6-B667-4BD2-BBC9-E0477C7DD8E5</string>
+					<string>0B12591F-9FD7-4C10-BC6D-3F77BBB6DF4D</string>
+					<string>C278B7F7-531E-40F6-86B9-E05179C086AE</string>
+				</array>
+				<key>name</key>
+				<string>GNU ChangeLog</string>
+			</dict>
+			<key>5970C8E6-17C8-4218-B2C2-51170F81ABA2</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>103335E3-2E66-400D-8AB7-8D73ABC28502</string>
+					<string>A8C184F4-C09C-4443-ABB4-063BA8C9E19A</string>
+					<string>C37261B9-03AB-4BAE-8C98-E5C4852DC6D3</string>
+					<string>1508F37A-F4C8-4713-A07C-BBA19302D7C9</string>
+					<string>84E7750F-0919-4AC1-9CAD-5712051D56B5</string>
+					<string>157FFD07-C0F8-4A0F-AD6E-EE9C430A3861</string>
+				</array>
+				<key>name</key>
+				<string>General Support Commands</string>
+			</dict>
+			<key>DA846651-96D2-43E4-9757-9F4D40856ED0</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>34DE2DFE-BE0E-4CAF-9708-2C3301ECED5F</string>
+					<string>0695A7D9-8D66-444A-8011-4BC43FE49818</string>
+					<string>149FCC74-05B6-4FDA-8F96-9D63FEE24FAB</string>
+					<string>00E8B784-A218-4897-9C7D-72CAC5C44195</string>
+					<string>E4B66F7C-D6EC-44BE-B7A7-4048CFD87941</string>
+				</array>
+				<key>name</key>
+				<string>Apple Bundle Support</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>name</key>
+	<string>GNU Autotools</string>
+	<key>ordering</key>
+	<array>
+		<string>103335E3-2E66-400D-8AB7-8D73ABC28502</string>
+		<string>A8C184F4-C09C-4443-ABB4-063BA8C9E19A</string>
+		<string>022DD220-139E-4811-8E92-85843489ED9F</string>
+		<string>422668A5-48DC-4EE5-9646-790F39AF1019</string>
+		<string>D88168BD-620F-4BDC-A2C0-9EE77BEE3735</string>
+		<string>E4B66F7C-D6EC-44BE-B7A7-4048CFD87941</string>
+		<string>1508F37A-F4C8-4713-A07C-BBA19302D7C9</string>
+		<string>0695A7D9-8D66-444A-8011-4BC43FE49818</string>
+		<string>84E7750F-0919-4AC1-9CAD-5712051D56B5</string>
+		<string>157FFD07-C0F8-4A0F-AD6E-EE9C430A3861</string>
+		<string>CBAC7877-2268-49EC-A63F-B5E68808BDEB</string>
+		<string>3B04634F-7344-4D6D-9749-6AE5576F6BE7</string>
+		<string>34DE2DFE-BE0E-4CAF-9708-2C3301ECED5F</string>
+		<string>B229DEDA-F125-43E5-B4F5-7FA52E3CE23F</string>
+		<string>00E8B784-A218-4897-9C7D-72CAC5C44195</string>
+		<string>D9613CC9-384A-4465-93E6-C27CDB78C0D3</string>
+		<string>6E3A791F-7A98-4E05-8880-338251174A6D</string>
+		<string>149FCC74-05B6-4FDA-8F96-9D63FEE24FAB</string>
+		<string>C37261B9-03AB-4BAE-8C98-E5C4852DC6D3</string>
+		<string>9BC9694B-DA2C-4EEC-9F54-7E3B01323477</string>
+		<string>AA3E47D4-68D8-4DFC-A4EA-5A74E9EF536D</string>
+		<string>881D3FA6-B667-4BD2-BBC9-E0477C7DD8E5</string>
+		<string>D489089C-AFA2-4350-AD69-10064AB92BB9</string>
+		<string>938FC2AF-792C-4426-B7E8-5326DE773E78</string>
+		<string>0B12591F-9FD7-4C10-BC6D-3F77BBB6DF4D</string>
+		<string>9B5798FA-7B66-49AD-A2FA-D0702228A776</string>
+		<string>C278B7F7-531E-40F6-86B9-E05179C086AE</string>
+	</array>
+	<key>uuid</key>
+	<string>612D975A-F907-4AF5-BC90-9238CF10D3DD</string>
+</dict>
+</plist>

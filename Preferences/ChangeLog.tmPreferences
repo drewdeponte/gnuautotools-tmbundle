@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>GNU ChangeLog - Preferences</string>
+	<key>scope</key>
+	<string>text.changelog</string>
+	<key>settings</key>
+	<dict>
+		<key>shellVariables</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>TM_AUTOTOOLS_NAME</string>
+				<key>value</key>
+				<string>Andrew De Ponte</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>TM_AUTOTOOLS_EMAIL</string>
+				<key>value</key>
+				<string>cyphactor@gmail.com</string>
+			</dict>
+		</array>
+	</dict>
+	<key>uuid</key>
+	<string>938FC2AF-792C-4426-B7E8-5326DE773E78</string>
+</dict>
+</plist>
