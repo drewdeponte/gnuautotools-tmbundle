@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# Script to manage copying the latest changelog entry from the changelog file
+# to the clipboard to ease with the process where a development workflow
+# requires tracking changes in both a changelog and commit history.
+
 import os
 import sys
 import re
